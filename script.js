@@ -7,13 +7,13 @@ const userColor = prompt('Please enter your favourite color in ENGLISH');
 const userColor2 = prompt('Please enter your favourite least color in ENGLISH');
 
 // stampa variabile su html id=pssw
-document.getElementById("pssw").innerHTML = userName + userSurname + userColor;
+const basePssw = document.getElementById("pssw").innerHTML = userName + userSurname + userColor;
 
 // bonus
 
-const userNameTrimmed = userName.replaceAll(/\s/g,'');
-const userSurnameTrimmed = userSurname.replaceAll(/\s/g,'');
-const userColorTrimmed = userColor.replaceAll(/\s/g,'');
+
+let psswTrimmed = (basePssw).replaceAll(/\s/g,'');
+console.log(psswTrimmed)
 
 
 document.getElementById("changing-color-div").style.backgroundColor = userColor;
@@ -25,6 +25,6 @@ for(i = 0; i < leastColor.length; i++) {
   }
 
 
-let finalPssw = document.getElementById("pssw2").innerHTML = userNameTrimmed + userSurnameTrimmed + userColorTrimmed;
-document.getElementById("pssw3").innerHTML = userNameTrimmed + userSurnameTrimmed + userColorTrimmed;
-console.log(finalPssw)
+document.getElementById("pssw2").innerHTML = psswTrimmed;
+document.getElementById("pssw3").innerHTML = psswTrimmed;
+
